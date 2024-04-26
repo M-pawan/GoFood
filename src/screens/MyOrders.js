@@ -32,28 +32,29 @@ export default function MyOrder() {
   useEffect(() => {
     fetchMyOrder();
   }, []);
-
   return (
     <div>
       <div>
         <Navbar />
       </div>
 
-      <div className="container">
+      <div className="container mb-5">
         <div className="row">
           {orderData != {}
             ? Array(orderData).map((data) => {
-                return data.orderData
-                  ? data.orderData.order_data
+                console.log(data.ordersData);
+                return data.ordersData
+                  ? data.ordersData.ordersData
                       .slice(0)
                       .reverse()
                       .map((item) => {
                         return item.map((arrayData) => {
+                          console.log(arrayData);
                           return (
                             <div>
-                              {arrayData.Order_date ? (
+                              {arrayData.OrderDate ? (
                                 <div className="m-auto mt-5">
-                                  {(data = arrayData.Order_date)}
+                                  {(data = arrayData.OrderDate)}
                                   <hr />
                                 </div>
                               ) : (
@@ -106,8 +107,9 @@ export default function MyOrder() {
             : ""}
         </div>
       </div>
-
-      <Footer />
+      <div>
+        <Footer />
+      </div>
     </div>
   );
 }
