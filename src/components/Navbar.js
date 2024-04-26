@@ -11,7 +11,7 @@ export default function Navbar() {
   const data = useStateCart(); // Data which wil is sent to add to cart
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-dark bg-success">
+      <nav className="navbar navbar-expand-lg navbar-dark bg-success gradient-custom-4">
         <div className="container-fluid">
           <Link className="navbar-brand fs-1 fst-italic fw-bold" to="/">
             GoFood
@@ -87,7 +87,7 @@ export default function Navbar() {
                 <div
                   className="btn bg-danger text-white mx-2 fw-bold"
                   onClick={() => {
-                    localStorage.removeItem("authToken");
+                    localStorage.clear();
                     navigate("/login");
                   }}
                 >
